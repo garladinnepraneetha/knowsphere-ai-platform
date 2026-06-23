@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 function Experts() {
   const [search, setSearch] = useState("");
   const [connected, setConnected] = useState([]);
-  const [experts, setExperts] = useState([]);
+  // const [experts, setExperts] = useState([]);
 
 
 const [experts] = useState([
