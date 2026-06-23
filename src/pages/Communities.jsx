@@ -1,9 +1,9 @@
 import Sidebar from "../components/Sidebar";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function Communities() {
   const [joinedCommunities, setJoinedCommunities] = useState({});
-  const [communities, setCommunities] = useState([]);
+  // const [communities, setCommunities] = useState([]);
 const [joined, setJoined] = useState([]);
 
   const handleJoin = (id) => {
@@ -14,13 +14,20 @@ const [joined, setJoined] = useState([]);
   };
 
 
-  useEffect(() => {
-  fetch("http://localhost:8000/api/communities.php")
-    .then((res) => res.json())
-    .then((data) => setCommunities(data))
-    .catch((err) => console.log(err));
-}, []);
-
+  const [communities] = useState([
+  {
+    id: 1,
+    name: "Customer Success Forum",
+    description: "Discuss customer retention and engagement",
+    members: 120,
+  },
+  {
+    id: 2,
+    name: "Sales Excellence Forum",
+    description: "Sales strategies and best practices",
+    members: 95,
+  },
+]);
   return (
     <div className="flex min-h-screen bg-slate-100">
       <Sidebar />

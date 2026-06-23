@@ -4,18 +4,25 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Dashboard() {
-const [stats, setStats] = useState({
-  experts: 0,
-  articles: 0,
-  communities: 0,
-  learningPaths: 0
-});
+// const [stats, setStats] = useState({
+//   experts: 0,
+//   articles: 0,
+//   communities: 0,
+//   learningPaths: 0
+// });
 
-useEffect(() => {
-  fetch("http://localhost:8000/api/dashboard.php")
-    .then((res) => res.json())
-    .then((data) => setStats(data));
-}, []);
+// useEffect(() => {
+//   fetch("http://localhost:8000/api/dashboard.php")
+//     .then((res) => res.json())
+//     .then((data) => setStats(data));
+// }, []);
+
+const stats = {
+  experts: 120,
+  articles: 450,
+  communities: 32,
+  learningPaths: 18,
+};
 
   return (
     <div className="flex min-h-screen bg-slate-100">

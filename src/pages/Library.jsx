@@ -4,15 +4,35 @@ import { useState, useEffect } from "react";
 function Library() {
   const [search, setSearch] = useState("");
   const [selectedArticle, setSelectedArticle] = useState(null);
-  const [articles, setArticles] = useState([]);
+  // const [articles, setArticles] = useState([]);
   const [summary, setSummary] = useState("");
 
-  useEffect(() => {
-    fetch("http://localhost:8000/api/articles.php")
-      .then((res) => res.json())
-      .then((data) => setArticles(data))
-      .catch((err) => console.error(err));
-  }, []);
+ const [articles] = useState([
+  {
+    id: 1,
+    title: "Customer Success Playbook",
+    category: "Best Practice",
+    author: "Sarah Johnson",
+    content:
+      "This guide explains customer retention, onboarding and engagement strategies.",
+  },
+  {
+    id: 2,
+    title: "Sales Excellence Guide",
+    category: "Training",
+    author: "John Smith",
+    content:
+      "Learn prospecting, negotiation and closing techniques.",
+  },
+  {
+    id: 3,
+    title: "Operations SOP",
+    category: "Operations",
+    author: "David Miller",
+    content:
+      "Standard operating procedures for operational excellence.",
+  },
+]);
 
   return (
     <div className="flex min-h-screen bg-slate-100">

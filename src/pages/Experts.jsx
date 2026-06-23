@@ -9,12 +9,26 @@ function Experts() {
   const [experts, setExperts] = useState([]);
 
 
-useEffect(() => {
-  fetch("http://localhost:8000/api/experts.php")
-    .then((res) => res.json())
-    .then((data) => setExperts(data))
-    .catch((err) => console.error(err));
-}, []);
+const [experts] = useState([
+  {
+    id: 1,
+    name: "Sarah Johnson",
+    expertise: "Customer Success",
+    experience: "12 Years",
+  },
+  {
+    id: 2,
+    name: "David Miller",
+    expertise: "Operations",
+    experience: "8 Years",
+  },
+  {
+    id: 3,
+    name: "John Smith",
+    expertise: "Sales Strategy",
+    experience: "10 Years",
+  },
+]);
 
   return (
     <div className="flex min-h-screen bg-slate-100">
