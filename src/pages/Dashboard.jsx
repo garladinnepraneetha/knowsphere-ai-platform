@@ -1,5 +1,6 @@
 import Sidebar from "../components/Sidebar";
 import StatsCard from "../components/StatsCard";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 function Dashboard() {
